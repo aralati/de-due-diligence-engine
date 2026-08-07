@@ -5,7 +5,6 @@ Run with: pytest tests/test_schemas.py -v
 
 from datetime import UTC, datetime
 
-
 import pytest
 from pydantic import ValidationError
 
