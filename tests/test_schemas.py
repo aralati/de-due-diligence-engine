@@ -40,7 +40,6 @@ def _metadata(agent_name: str = "test_agent") -> AgentMetadata:
             SourceCitation(
                 source_name="Destatis",
                 retrieved_at=datetime.now(UTC),
-
                 reliability_score=0.9,
             )
         ],
@@ -206,13 +205,19 @@ class TestComplianceFlag:
             lksg_supply_chain_risk=RiskLevel.LOW,
             esg_scores=[
                 ESGSubScore(
-                    category=ESGCategory.ENVIRONMENTAL, score_0_100=60.0, rationale="Adequate reporting."
+                    category=ESGCategory.ENVIRONMENTAL,
+                    score_0_100=60.0,
+                    rationale="Adequate reporting.",
                 ),
                 ESGSubScore(
-                    category=ESGCategory.SOCIAL, score_0_100=80.0, rationale="Strong labor practices."
+                    category=ESGCategory.SOCIAL,
+                    score_0_100=80.0,
+                    rationale="Strong labor practices.",
                 ),
                 ESGSubScore(
-                    category=ESGCategory.GOVERNANCE, score_0_100=70.0, rationale="Clean board structure."
+                    category=ESGCategory.GOVERNANCE,
+                    score_0_100=70.0,
+                    rationale="Clean board structure.",
                 ),
             ],
             overall_compliance_risk=RiskLevel.LOW,
@@ -280,9 +285,13 @@ class TestInvestmentReportRoundTrip:
                 ticker="SAP.DE",
                 lksg_supply_chain_risk=RiskLevel.LOW,
                 esg_scores=[
-                    ESGSubScore(category=ESGCategory.ENVIRONMENTAL, score_0_100=75.0, rationale="Good."),
+                    ESGSubScore(
+                        category=ESGCategory.ENVIRONMENTAL, score_0_100=75.0, rationale="Good."
+                    ),
                     ESGSubScore(category=ESGCategory.SOCIAL, score_0_100=72.0, rationale="Good."),
-                    ESGSubScore(category=ESGCategory.GOVERNANCE, score_0_100=80.0, rationale="Good."),
+                    ESGSubScore(
+                        category=ESGCategory.GOVERNANCE, score_0_100=80.0, rationale="Good."
+                    ),
                 ],
                 overall_compliance_risk=RiskLevel.LOW,
             ),
