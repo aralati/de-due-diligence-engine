@@ -14,7 +14,8 @@ Design principles:
 
 from __future__ import annotations
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+
 from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
@@ -80,7 +81,8 @@ class AgentMetadata(DDEBaseModel):
     model_used: str = Field(..., examples=["claude-sonnet-4-6", "gpt-4.1"])
     confidence_score: Score01
     execution_time_ms: int = Field(..., ge=0)
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC)
+
     sources: list[SourceCitation] = Field(default_factory=list)
     warnings: list[str] = Field(
         default_factory=list,
@@ -226,7 +228,8 @@ class InvestmentReport(DDEBaseModel):
     ticker: str
     company_name: str
     market_index: MarketIndex
-    generated_at: datetime = Field(default_factory=lambda: datetime.now(timezone.utc))
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC)
+
 
     macro: MacroSignal
     financial: FinancialMetrics
