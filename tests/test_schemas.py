@@ -3,7 +3,8 @@
 Run with: pytest tests/test_schemas.py -v
 """
 
-from datetime import datetime, timezone
+from datetime import UTC, datetime
+
 
 import pytest
 from pydantic import ValidationError
@@ -39,7 +40,8 @@ def _metadata(agent_name: str = "test_agent") -> AgentMetadata:
         sources=[
             SourceCitation(
                 source_name="Destatis",
-                retrieved_at=datetime.now(timezone.utc),
+                retrieved_at=datetime.now(UTC),
+
                 reliability_score=0.9,
             )
         ],
