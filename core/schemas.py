@@ -106,7 +106,9 @@ class MacroSignal(DDEBaseModel):
 
     impact_direction: ImpactDirection
     impact_assessment: str = Field(
-        ..., min_length=20, description="Free-text reasoning on how this affects the target company."
+        ...,
+        min_length=20,
+        description="Free-text reasoning on how this affects the target company.",
     )
     macro_risk_level: RiskLevel
 
