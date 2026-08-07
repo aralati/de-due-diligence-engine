@@ -15,7 +15,6 @@ Design principles:
 from __future__ import annotations
 
 from datetime import UTC, datetime
-
 from typing import Annotated
 
 from pydantic import BaseModel, ConfigDict, Field, HttpUrl, field_validator
@@ -82,7 +81,6 @@ class AgentMetadata(DDEBaseModel):
     confidence_score: Score01
     execution_time_ms: int = Field(..., ge=0)
     timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
-
     sources: list[SourceCitation] = Field(default_factory=list)
     warnings: list[str] = Field(
         default_factory=list,
@@ -229,7 +227,6 @@ class InvestmentReport(DDEBaseModel):
     company_name: str
     market_index: MarketIndex
     generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
-
 
     macro: MacroSignal
     financial: FinancialMetrics
