@@ -81,7 +81,7 @@ class AgentMetadata(DDEBaseModel):
     model_used: str = Field(..., examples=["claude-sonnet-4-6", "gpt-4.1"])
     confidence_score: Score01
     execution_time_ms: int = Field(..., ge=0)
-    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC)
+    timestamp: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
     sources: list[SourceCitation] = Field(default_factory=list)
     warnings: list[str] = Field(
@@ -228,7 +228,7 @@ class InvestmentReport(DDEBaseModel):
     ticker: str
     company_name: str
     market_index: MarketIndex
-    generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC)
+    generated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
     macro: MacroSignal
