@@ -286,12 +286,16 @@ class TestInvestmentReportRoundTrip:
                 lksg_supply_chain_risk=RiskLevel.LOW,
                 esg_scores=[
                     ESGSubScore(
-    category=ESGCategory.ENVIRONMENTAL, score_0_100=75.0, rationale="Good overall."
-),
-ESGSubScore(category=ESGCategory.SOCIAL, score_0_100=72.0, rationale="Good overall."),
-ESGSubScore(
-    category=ESGCategory.GOVERNANCE, score_0_100=80.0, rationale="Good overall."
-),
+                        category=ESGCategory.ENVIRONMENTAL,
+                        score_0_100=75.0,
+                        rationale="Good overall.",
+                    ),
+                    ESGSubScore(
+                        category=ESGCategory.SOCIAL, score_0_100=72.0, rationale="Good overall."
+                    ),
+                    ESGSubScore(
+                        category=ESGCategory.GOVERNANCE, score_0_100=80.0, rationale="Good overall."
+                    ),
                 ],
                 overall_compliance_risk=RiskLevel.LOW,
             ),
